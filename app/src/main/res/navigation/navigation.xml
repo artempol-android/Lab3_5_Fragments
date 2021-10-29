@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.lab3_activity1.FragmentMain"
+        android:label="FragmentMain"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentSecond"
+            app:destination="@id/fragmentSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSecond"
+        android:name="com.example.lab3_activity1.FragmentSecond"
+        android:label="FragmentSecond"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_fragmentSecond_to_fragmentThird"
+            app:destination="@id/fragmentThird" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentThird"
+        android:name="com.example.lab3_activity1.FragmentThird"
+        android:label="FragmentThird"
+        tools:layout="@layout/fragment_third"/>
+
+    <action
+        android:id="@+id/global_action_to_about"
+        app:destination="@id/graph_about_activity" />
+
+    <activity
+        android:id="@+id/graph_about_activity"
+        android:name="com.example.lab3_activity1.ActivityAbout"
+        tools:layout="@layout/activity_about"
+        android:label="About" />
+</navigation>
