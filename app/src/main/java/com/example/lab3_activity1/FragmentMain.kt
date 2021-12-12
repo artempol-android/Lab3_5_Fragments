@@ -4,26 +4,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.lab3_activity1.databinding.FragmentMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.lab3_activity1.databinding.FragmentFirstBinding
 
-class FragmentMain : Fragment(R.layout.fragment_main) {
+class FragmentMain : Fragment(R.layout.fragment_first) {
 
-    private lateinit var binding: FragmentMainBinding
+    private lateinit var binding: FragmentFirstBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding = FragmentMainBinding.bind(view)
+        binding = FragmentFirstBinding.bind(view)
 
-        binding.buttonMain.setOnClickListener { findNavController().navigate(R.id.action_fragmentMain_to_fragmentSecond) }
+        binding.bnToSecond.setOnClickListener { findNavController().navigate(R.id.action_fragmentMain_to_fragmentSecond) }
 
-        val bottom: BottomNavigationView = binding.bottomNav
-        bottom.setOnItemSelectedListener { item ->
-            if (item.itemId == R.id.item_about_activity)
-                findNavController().navigate(R.id.graph_about_activity)
-            return@setOnItemSelectedListener true
-        }
     }
 
 }

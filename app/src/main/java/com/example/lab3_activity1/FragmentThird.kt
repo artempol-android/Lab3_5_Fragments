@@ -16,16 +16,10 @@ class FragmentThird : Fragment(R.layout.fragment_third) {
 
         binding = FragmentThirdBinding.bind(view)
 
-        binding.toFirstButton2.setOnClickListener { findNavController().popBackStack(R.id.fragmentMain, false) }
+        binding.bnToFirst.setOnClickListener { findNavController().popBackStack(R.id.fragmentMain, false) }
 
-        binding.toSecondButton.setOnClickListener { findNavController().popBackStack() }
+        binding.bnToSecond.setOnClickListener { findNavController().popBackStack() }
 
-        val bottom: BottomNavigationView = binding.bottomNav
-        bottom.setOnItemSelectedListener { item ->
-            if (item.itemId == R.id.item_about_activity)
-                findNavController().navigate(R.id.graph_about_activity)
-            return@setOnItemSelectedListener true
-        }
     }
 
 }
